@@ -62,6 +62,35 @@ $$('.close').forEach(function(node){
 
 
 
+//点击密码栏后面的showpassword按钮进行密码样式的切换
+//对password做绑定事件
+$$('.showpassword').forEach(function(node){
+  node.addEventListener('click',function(){
+    //针对name为passowrd的input做事件绑定
+    var showpassword = $$('.flip-modal input[name=password]');
+    for (var i = 0; i<showpassword.length;i++){
+      if(showpassword[i].type === 'password'){
+            showpassword[i].type = 'text';
+      }else{
+        showpassword[i].type = 'password';
+      }
+    }
+  })
+})
+
+$('.showpassword2').addEventListener('click',function(){
+    //针对name为passowrd的input做事件绑定
+    //针对name为passowrd2的input做再单独做一次事件绑定，因为只有一个，所以直接使用$函数，没有类数组对象也不用for循环了
+    var showpassword2 = $('.flip-modal input[name=password2]');
+    if(showpassword2.type === 'password'){
+          showpassword2.type = 'text';
+    }else{
+      showpassword2.type = 'password';
+    }
+})
+
+
+
 //点击除了登录|注册框的其他区域也关闭框  需在.flip-modal的div上设置阻止冒泡
 document.addEventListener('click', function(){
   $('.flip-modal').classList.remove('show')

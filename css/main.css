@@ -87,6 +87,13 @@ header .fa-user-circle {
   left: 13px;
   top: 13px;
 }
+.modal .content .input-field .showpassword,
+.modal .content .input-field .showpassword2 {
+  position: absolute;
+  left: 260px;
+  top: 13px;
+}
+
 .modal .content .input-field input[type=text],
 .modal .content .input-field input[type=password] {
   width: 100%;
